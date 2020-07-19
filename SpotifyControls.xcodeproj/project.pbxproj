@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01E05CD624C4350400F5F99E /* SpotifyControls.h in Headers */ = {isa = PBXBuildFile; fileRef = 01E05CD424C4350400F5F99E /* SpotifyControls.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		01E05CDD24C4353800F5F99E /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E05CDC24C4353800F5F99E /* PlayerState.swift */; };
+		01E05CDF24C4356100F5F99E /* Spotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E05CDE24C4356100F5F99E /* Spotify.swift */; };
+		01E05CE124C435BA00F5F99E /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E05CE024C435BA00F5F99E /* Track.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		01E05CD124C4350400F5F99E /* SpotifyControls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpotifyControls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		01E05CD424C4350400F5F99E /* SpotifyControls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpotifyControls.h; sourceTree = "<group>"; };
 		01E05CD524C4350400F5F99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01E05CDC24C4353800F5F99E /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		01E05CDE24C4356100F5F99E /* Spotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotify.swift; sourceTree = "<group>"; };
+		01E05CE024C435BA00F5F99E /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +50,10 @@
 		01E05CD324C4350400F5F99E /* SpotifyControls */ = {
 			isa = PBXGroup;
 			children = (
-				01E05CD424C4350400F5F99E /* SpotifyControls.h */,
 				01E05CD524C4350400F5F99E /* Info.plist */,
+				01E05CDC24C4353800F5F99E /* PlayerState.swift */,
+				01E05CDE24C4356100F5F99E /* Spotify.swift */,
+				01E05CE024C435BA00F5F99E /* Track.swift */,
 			);
 			path = SpotifyControls;
 			sourceTree = "<group>";
@@ -59,7 +65,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01E05CD624C4350400F5F99E /* SpotifyControls.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +100,7 @@
 				TargetAttributes = {
 					01E05CD024C4350400F5F99E = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -131,6 +137,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E05CDF24C4356100F5F99E /* Spotify.swift in Sources */,
+				01E05CDD24C4353800F5F99E /* PlayerState.swift in Sources */,
+				01E05CE124C435BA00F5F99E /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +268,7 @@
 		01E05CDA24C4350400F5F99E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -272,9 +282,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MinhTon.SpotifyControls;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -282,6 +294,7 @@
 		01E05CDB24C4350400F5F99E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -295,6 +308,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = com.MinhTon.SpotifyControls;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
