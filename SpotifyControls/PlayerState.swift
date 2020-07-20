@@ -9,6 +9,6 @@
 import Foundation
 
 public enum PlayerState: String {
-    case playing = "playing";
-    case paused = "paused";
+    case playing = "play";
+    case paused = "pause";
 }

@@ -30,6 +30,7 @@ open class SpotifyControls: NSObject {
             case .playing:
                 _ = SpotifyControls.executeAppleScriptWithString("play")
             }
+            NotificationCenter.default.post(name: Notification.Name(rawValue: InternalNotification.key), object: self)
         }
     }
     
@@ -37,11 +38,13 @@ open class SpotifyControls: NSObject {
     public static func playNext(_ completionHandler: (()->())? = nil){
         _ = SpotifyControls.executeAppleScriptWithString("play (next track)")
         completionHandler?()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: InternalNotification.key), object: self)
     }
     
     public static func playPrevious(_ completionHandler: (() -> ())? = nil){
         _ = SpotifyControls.executeAppleScriptWithString("play (previous track)")
         completionHandler?()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: InternalNotification.key), object: self)
     }
     
     
@@ -55,12 +58,14 @@ open class SpotifyControls: NSObject {
         }
         _ = SpotifyControls.startSpotify(option: option)
         completionHandler?()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: InternalNotification.key), object: self)
     }
     
     
     public static func activateSpotify(completionHandler: (() -> ())? = nil){
         _ = SpotifyControls.activateSpotify()
         completionHandler?()
+        NotificationCenter.default.post(name: Notification.Name(rawValue: InternalNotification.key), object: self)
     }
     
     static func executeAppleScriptWithString(_ command: String) -> String? {
